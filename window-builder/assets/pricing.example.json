@@ -1,0 +1,20 @@
+{
+  "base": {
+    "Milgard|TUSCANY|HSL|XO|3030": 396.21,
+    "Milgard|TUSCANY|HSL|XO|*": 420.00
+  },
+  "surcharges": {
+    "grid:SCUL": 25.00,
+    "grid:FLAT": 15.00,
+    "FrameOption:ZBAR28": 12.50,
+    "GlassOptionsARG": 15.00,
+    "GlassOptionsTEMP": 20.00,
+    "GlassOptionsSCMAX": 18.00,
+    "GlassOptionsT24": 12.00,
+    "OtherBRTU": 10.00,
+    "OtherSSA": 8.00,
+    "OtherTRIM": 14.00,
+    "OtherPTS": 9.00
+  },
+  "discount_pct": 5
+}

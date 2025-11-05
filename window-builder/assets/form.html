@@ -1,0 +1,1674 @@
+<form
+  id="windowbuilder"
+  name="windowbuilder"
+  action="MyEstimatesWindowBuilder.aspx"
+  method="post"
+  siq_id="autopick_9717"
+>
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="section-title no-border">
+        <h1><span id="BuilderTitle">Build New Window</span></h1>
+      </div>
+
+      <!-- INSTRUCTIONS MESSAGE-->
+      <div class="border p10 mb20">
+        <div class="common-content">
+          <span id="InstructionsMessage">
+            <p class="m-0">
+              <strong>Quick Start:</strong> Use the Window Builder below to
+              create your own estimates. Don't want to build your own? Let us do
+              it for you.
+              <a href="https://thewindowstore.com/contact-us/">Contact Us</a>
+              for a free estimate today!
+            </p>
+          </span>
+        </div>
+      </div>
+      <!-- /INSTRUCTIONS MESSAGE-->
+
+      <!-- DELIVERY ZIP MESSAGE-->
+      <div class="">
+        <div class="common-content">
+          <p>
+            <strong>Delivery Zip Code:&nbsp;&nbsp;&nbsp;</strong>92122 - San
+            Diego, CA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong
+              >Ships from:&nbsp;&nbsp;&nbsp;</strong
+            >TEM
+          </p>
+        </div>
+      </div>
+      <!-- /DELIVERY ZIP MESSAGE-->
+
+      <!-- SHIPS FROM -->
+      <div class="">
+        <div class="common-content">
+          <span id="ShipsFromMessage"></span>
+        </div>
+      </div>
+      <!-- /SHIPS FROM-->
+
+      <div class="">
+        <div class="common-content"></div>
+      </div>
+
+      <div class="calculate-form pt50">
+        <div class="form-holder">
+          <div class="common-title">
+            <h6>
+              You are currently editing Item:
+              <span id="ItemDisplayIndex">[New Window]</span>
+            </h6>
+            <input type="hidden" name="DisplayIndex" value="0" />
+            <input type="hidden" name="ResetSizes" value="0" />
+          </div>
+          <div class="common-divider mb40"></div>
+          <span id="DebugLabel"></span>
+          <!-- HIdden fields -->
+          <input type="hidden" name="FormSubmitted" value="yep" />
+          <input type="hidden" name="WindowID" value="0" />
+          <div class="">
+            <div class="calculate-form-grid">
+              <div class="grid-label">List Price:</div>
+              <div class="grid-value">
+                <s><span id="DisplayListPrice1"></span></s>
+              </div>
+            </div>
+            <div class="calculate-form-grid">
+              <div class="grid-label pt20">Our Price:</div>
+              <div class="grid-value pt20 orange">
+                <span id="DisplayPrice1">press <i>calculate total</i></span>
+              </div>
+            </div>
+
+            <div class="calculate-form-grid">
+              <div class="grid-label pt20">Qty:</div>
+              <div class="grid-value pt20">
+                <input
+                  type="text"
+                  name="quantity"
+                  value="1"
+                  style="width: 38px !important"
+                />
+              </div>
+            </div>
+            <div class="calculate-form-grid">
+              <div class="grid-label pt20">Total:</div>
+              <div class="grid-value pt20">
+                <div class="total-grid">
+                  <div class="total-value">
+                    <span class="orange"
+                      ><span id="DisplayPriceTotal1"></span
+                    ></span>
+                  </div>
+                  <div class="total-button">
+                    <button
+                      class="default-btn blue small"
+                      type="submit"
+                      id="btnCalculate"
+                      name="Calculate"
+                      value=""
+                    >
+                      Calculate Total
+                    </button>
+                    <button
+                      class="default-btn small"
+                      type="submit"
+                      name="cancel"
+                      value="cancel"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="calculate-form-buttons pt20" id="save1">
+              <input type="hidden" name="hdMsie9" id="hdMsie9" value="" />
+            </div>
+          </div>
+          <div class="common-divider mt40"></div>
+        </div>
+        <div class="form-holder">
+          <div class="row">
+            <div class="col-lg-6 pt30">
+              <div class="">
+                <label for="">Manufacturer</label>
+                <div class="selectric-wrapper selectric-custom-select">
+                  <div class="selectric-hide-select">
+                    <select
+                      name="Manufacturer"
+                      class="custom-select"
+                      onchange="ResetSizesRefresh('Manufacturer');"
+                      tabindex="-1"
+                    >
+                      <option value="Milgard" selected="">
+                        Milgard Windows &amp; Doors
+                      </option>
+                    </select>
+                  </div>
+                  <div class="selectric">
+                    <span class="label">Milgard Windows &amp; Doors</span
+                    ><b class="button">▾</b>
+                  </div>
+                  <div class="selectric-items" tabindex="-1">
+                    <div class="selectric-scroll">
+                      <ul>
+                        <li data-index="0" class="last selected">
+                          Milgard Windows &amp; Doors
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <input class="selectric-input" tabindex="0" />
+                </div>
+              </div>
+              <div class="pt20">
+                <label for="">Frame Style</label>
+                <div class="selectric-wrapper selectric-custom-select">
+                  <div class="selectric-hide-select">
+                    <select
+                      name="frame"
+                      class="custom-select"
+                      onchange="ResetSizesRefresh('Frame');"
+                      tabindex="-1"
+                    >
+                      <option value="STYLELINE REP SER">
+                        Retrofit Style Line®
+                      </option>
+
+                      <option value="STYLELINE">Style Line® Series</option>
+
+                      <option value="TB ALUM">Thermal Break Aluminum</option>
+
+                      <option value="VINYL STD">Trinsic™ Series</option>
+
+                      <option value="TUSCANY" selected="">
+                        Tuscany® Series
+                      </option>
+
+                      <option value="UL">Ultra™ Series</option>
+                    </select>
+                  </div>
+                  <div class="selectric">
+                    <span class="label">Tuscany® Series</span
+                    ><b class="button">▾</b>
+                  </div>
+                  <div class="selectric-items" tabindex="-1">
+                    <div class="selectric-scroll">
+                      <ul>
+                        <li data-index="0" class="">Retrofit Style Line®</li>
+                        <li data-index="1" class="">Style Line® Series</li>
+                        <li data-index="2" class="">Thermal Break Aluminum</li>
+                        <li data-index="3" class="">Trinsic™ Series</li>
+                        <li data-index="4" class="selected">Tuscany® Series</li>
+                        <li data-index="5" class="last">Ultra™ Series</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <input class="selectric-input" tabindex="0" />
+                </div>
+                <div class="common-content">
+                  <p>
+                    <small
+                      >(Rep. = Replacement or Retrofit with
+                      <strong>Z-Bar</strong>)</small
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="pt20">
+                <label for="">Window Type</label>
+                <div
+                  class="selectric-wrapper selectric-custom-select selectric-above"
+                >
+                  <div class="selectric-hide-select">
+                    <select
+                      name="type"
+                      class="custom-select"
+                      onchange="ResetSizesRefresh('Type');"
+                      tabindex="-1"
+                    >
+                      <option value="ARCH">Arch Top Window</option>
+
+                      <option value="AWN">Awning</option>
+
+                      <option value="CAS">Casement Window</option>
+
+                      <option value="DHG">Double Hung Window</option>
+
+                      <option value="FAWN">Fixed Awning</option>
+
+                      <option value="HSL" selected="">
+                        Horizontal Sliding Window
+                      </option>
+
+                      <option value="PW">Picture Window</option>
+
+                      <option value="RAD">Radius Window</option>
+
+                      <option value="SHG">Single Hung Window</option>
+
+                      <option value="SDR">Sliding Glass Door</option>
+                    </select>
+                  </div>
+                  <div class="selectric">
+                    <span class="label">Horizontal Sliding Window</span
+                    ><b class="button">▾</b>
+                  </div>
+                  <div
+                    class="selectric-items"
+                    tabindex="-1"
+                    style="width: 350px; height: 302px"
+                  >
+                    <div class="selectric-scroll">
+                      <ul>
+                        <li data-index="0" class="">Arch Top Window</li>
+                        <li data-index="1" class="">Awning</li>
+                        <li data-index="2" class="">Casement Window</li>
+                        <li data-index="3" class="">Double Hung Window</li>
+                        <li data-index="4" class="">Fixed Awning</li>
+                        <li data-index="5" class="selected highlighted">
+                          Horizontal Sliding Window
+                        </li>
+                        <li data-index="6" class="">Picture Window</li>
+                        <li data-index="7" class="">Radius Window</li>
+                        <li data-index="8" class="">Single Hung Window</li>
+                        <li data-index="9" class="last">Sliding Glass Door</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <input class="selectric-input" tabindex="0" />
+                </div>
+                <div class="pt20">
+                  <div class="selectric-wrapper selectric-custom-select">
+                    <div class="selectric-hide-select">
+                      <select
+                        name="SubType"
+                        class="custom-select"
+                        onchange="ResetSizesRefresh('SubType');"
+                        tabindex="-1"
+                      >
+                        <option value="OX">Horiz. Slider (OX)</option>
+
+                        <option value="OXA">
+                          Horiz. Slider above 1 Lite (OXA)
+                        </option>
+
+                        <option value="OXB">
+                          Horiz. Slider below 1 Lite (OXB)
+                        </option>
+
+                        <option value="SVOX">Sgl. Vent (SVOX)</option>
+
+                        <option value="SVXO">Sgl. Vent (SVXO)</option>
+
+                        <option value="XO" selected="">
+                          Horiz. Slider (XO)
+                        </option>
+
+                        <option value="XOA">
+                          Horiz. Slider above 1 Lite (XOA)
+                        </option>
+
+                        <option value="XOB">
+                          Horiz. Slider below 1 Lite (XOB)
+                        </option>
+
+                        <option value="XOX">Dbl. Horiz. Slider (XOX)</option>
+                      </select>
+                    </div>
+                    <div class="selectric">
+                      <span class="label">Horiz. Slider (XO)</span
+                      ><b class="button">▾</b>
+                    </div>
+                    <div class="selectric-items" tabindex="-1">
+                      <div class="selectric-scroll">
+                        <ul>
+                          <li data-index="0" class="">Horiz. Slider (OX)</li>
+                          <li data-index="1" class="">
+                            Horiz. Slider above 1 Lite (OXA)
+                          </li>
+                          <li data-index="2" class="">
+                            Horiz. Slider below 1 Lite (OXB)
+                          </li>
+                          <li data-index="3" class="">Sgl. Vent (SVOX)</li>
+                          <li data-index="4" class="">Sgl. Vent (SVXO)</li>
+                          <li data-index="5" class="selected">
+                            Horiz. Slider (XO)
+                          </li>
+                          <li data-index="6" class="">
+                            Horiz. Slider above 1 Lite (XOA)
+                          </li>
+                          <li data-index="7" class="">
+                            Horiz. Slider below 1 Lite (XOB)
+                          </li>
+                          <li data-index="8" class="last">
+                            Dbl. Horiz. Slider (XOX)
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <input class="selectric-input" tabindex="0" />
+                  </div>
+                </div>
+                <div class="common-content pt20">
+                  <p>
+                    If you have specific configuration requirements they must be
+                    entered in the <strong>Notes</strong> field below or window
+                    will be built to <strong>Milgard</strong> standards.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 pt30">
+              <div class="text-center">
+                <img
+                  name="windowimage"
+                  src="Images/SubType/XO.gif"
+                  class="img-fluid border p3"
+                  alt=""
+                />
+                <div class="common-content pt20">
+                  <p>
+                    This view is from the outside looking in and is not a true
+                    representation of your window. <br />
+                    X = Operable O = Fixed
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="display: none">
+          <div class="common-title">
+            <h6>Special Notes</h6>
+          </div>
+          <div class="common-content">
+            <span id="Label_SpecificNotes"
+              >•
+              <div style="display: none">
+                edf40wrjww2WINDOW_SPECIFIC_NOTES:notes
+              </div>
+              All combinations over 40 sq. ft. will ship with glass removed to
+              be installed at the job site. <b><i>The Window Store</i></b> is
+              not responsible for installing glass.<br />•
+              <div style="display: none">
+                edf40wrjww2WINDOW_SPECIFIC_NOTES:notes
+              </div>
+              Minimum standard egress at 48"w x 42"h for half vent, 60"w x 42"h
+              w/24" vent set for single vent and 72"w x 42"h w/24" vent set for
+              double vent.<br
+            /></span>
+            <!--
+                                            <ul>
+                                                <li>All combinations over 40 sq. ft. will ship with glass removed to be installed at the job site. The Window Store is not responsible for installing glass.</li>
+                                                <li class="mt12">Minimum standard egress at 48"w x 42"h for half vent, 60"w x 42"h w/24" vent set for single vent and 72"w x 42"h w/24" vent set for double vent.</li>
+                                            </ul>
+                                            -->
+          </div>
+        </div>
+        <div class="common-divider mt40 mb40"></div>
+        <div>
+          <div class="common-title">
+            <h6>Window Size</h6>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 pt20">
+              <div class="radio-grid">
+                <div class="radio-field">
+                  <div class="radio-holder">
+                    <input
+                      type="radio"
+                      name="SizeInput"
+                      value="NFS"
+                      onclick="UpdateSizeInput('NFS'); RefreshForm('SizeInput');"
+                    />
+                    <div class="radio-icon"></div>
+                  </div>
+                </div>
+                <div class="radio-label form-holder">
+                  <label for="">CUSTOM SIZE</label>
+                  <div class="common-content">
+                    <p>
+                      Custom Net Frame Size (NFS) windows will be manufactured
+                      to the exact dimensions entered. If you order a 36" x 48"
+                      NFS window, it will be 36" x 48"
+                    </p>
+                  </div>
+                  <div class="common-content">
+                    <p>
+                      <strong>Enter Dimensions</strong> <br />(in inches to the
+                      nearest 16th)
+                    </p>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 pt20">
+                      <div>
+                        <label for="">Width(inches)</label>
+                        <input
+                          type="text"
+                          name="Width"
+                          value="24"
+                          onchange="RefreshForm('Width');"
+                          disabled=""
+                        />
+                        <div class="pt10">
+                          <div
+                            class="selectric-wrapper selectric-custom-select selectric-disabled"
+                          >
+                            <div class="selectric-hide-select">
+                              <select
+                                name="WidthSixteenth"
+                                class="custom-select"
+                                onchange="RefreshForm('WidthSixteenth');"
+                                disabled=""
+                                tabindex="-1"
+                              >
+                                <option value="0">0</option>
+                                <option value="1">1/16</option>
+                                <option value="2">1/8</option>
+                                <option value="3">3/16</option>
+                                <option value="4">1/4</option>
+                                <option value="5">5/16</option>
+                                <option value="6">3/8</option>
+                                <option value="7">7/16</option>
+                                <option value="8">1/2</option>
+                                <option value="9">9/16</option>
+                                <option value="10">5/8</option>
+                                <option value="11">11/16</option>
+                                <option value="12">3/4</option>
+                                <option value="13">13/16</option>
+                                <option value="14">7/8</option>
+                                <option value="15">15/16</option>
+                              </select>
+                            </div>
+                            <div class="selectric">
+                              <span class="label">0</span
+                              ><b class="button">▾</b>
+                            </div>
+                            <div class="selectric-items" tabindex="-1">
+                              <div class="selectric-scroll">
+                                <ul>
+                                  <li data-index="0" class="selected">0</li>
+                                  <li data-index="1" class="">1/16</li>
+                                  <li data-index="2" class="">1/8</li>
+                                  <li data-index="3" class="">3/16</li>
+                                  <li data-index="4" class="">1/4</li>
+                                  <li data-index="5" class="">5/16</li>
+                                  <li data-index="6" class="">3/8</li>
+                                  <li data-index="7" class="">7/16</li>
+                                  <li data-index="8" class="">1/2</li>
+                                  <li data-index="9" class="">9/16</li>
+                                  <li data-index="10" class="">5/8</li>
+                                  <li data-index="11" class="">11/16</li>
+                                  <li data-index="12" class="">3/4</li>
+                                  <li data-index="13" class="">13/16</li>
+                                  <li data-index="14" class="">7/8</li>
+                                  <li data-index="15" class="last">15/16</li>
+                                </ul>
+                              </div>
+                            </div>
+                            <input class="selectric-input" disabled="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 pt20">
+                      <div>
+                        <label for="">Height(inches)</label>
+                        <input
+                          type="text"
+                          name="Height"
+                          style="width: 45px"
+                          value="18"
+                          onchange="RefreshForm('Height');"
+                          disabled=""
+                        />
+                        <div class="pt10">
+                          <div
+                            class="selectric-wrapper selectric-custom-select selectric-disabled"
+                          >
+                            <div class="selectric-hide-select">
+                              <select
+                                class="custom-select"
+                                name="HeightSixteenth"
+                                onchange="RefreshForm('HeightSixteenth');"
+                                disabled=""
+                                tabindex="-1"
+                              >
+                                <option value="0">0</option>
+                                <option value="1">1/16</option>
+                                <option value="2">1/8</option>
+                                <option value="3">3/16</option>
+                                <option value="4">1/4</option>
+                                <option value="5">5/16</option>
+                                <option value="6">3/8</option>
+                                <option value="7">7/16</option>
+                                <option value="8">1/2</option>
+                                <option value="9">9/16</option>
+                                <option value="10">5/8</option>
+                                <option value="11">11/16</option>
+                                <option value="12">3/4</option>
+                                <option value="13">13/16</option>
+                                <option value="14">7/8</option>
+                                <option value="15">15/16</option>
+                              </select>
+                            </div>
+                            <div class="selectric">
+                              <span class="label">0</span
+                              ><b class="button">▾</b>
+                            </div>
+                            <div class="selectric-items" tabindex="-1">
+                              <div class="selectric-scroll">
+                                <ul>
+                                  <li data-index="0" class="selected">0</li>
+                                  <li data-index="1" class="">1/16</li>
+                                  <li data-index="2" class="">1/8</li>
+                                  <li data-index="3" class="">3/16</li>
+                                  <li data-index="4" class="">1/4</li>
+                                  <li data-index="5" class="">5/16</li>
+                                  <li data-index="6" class="">3/8</li>
+                                  <li data-index="7" class="">7/16</li>
+                                  <li data-index="8" class="">1/2</li>
+                                  <li data-index="9" class="">9/16</li>
+                                  <li data-index="10" class="">5/8</li>
+                                  <li data-index="11" class="">11/16</li>
+                                  <li data-index="12" class="">3/4</li>
+                                  <li data-index="13" class="">13/16</li>
+                                  <li data-index="14" class="">7/8</li>
+                                  <li data-index="15" class="last">15/16</li>
+                                </ul>
+                              </div>
+                            </div>
+                            <input class="selectric-input" disabled="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 pt20">
+              <div class="radio-grid">
+                <div class="radio-field">
+                  <div class="radio-holder">
+                    <input
+                      type="radio"
+                      name="SizeInput"
+                      value="RO"
+                      onclick="UpdateSizeInput('RO'); RefreshForm('SizeInput');"
+                      checked=""
+                    />
+                    <div class="radio-icon"></div>
+                  </div>
+                </div>
+                <div class="radio-label form-holder">
+                  <label for="">STANDARD SIZE</label>
+                  <div class="common-content">
+                    <p>
+                      Standard Rough Opening (RO) windows will be manufactured
+                      1/2" undersize in both width and height. If you order a
+                      36" x 48" RO window, it will be 35 1/2" x 47 1/2".
+                    </p>
+                  </div>
+                  <div class="common-content">
+                    <p>
+                      <strong>Select Dimensions</strong> <br />(Standard Size
+                      List)
+                    </p>
+                  </div>
+                  <div class="pt20">
+                    <label for="">Width x Height</label>
+                    <div class="pt10">
+                      <div class="selectric-wrapper selectric-custom-select">
+                        <div class="selectric-hide-select">
+                          <select
+                            name="ROSize"
+                            class="custom-select"
+                            onchange="RefreshForm('ROSize');"
+                            tabindex="-1"
+                          >
+                            <option value="" selected="">Select Size</option>
+
+                            <option value="2016" selected="">
+                              2'0" x 1'6" (NFS 23.5" x 17.5")
+                            </option>
+
+                            <option value="2020">
+                              2'0" x 2'0" (NFS 23.5" x 23.5")
+                            </option>
+
+                            <option value="2026">
+                              2'0" x 2'6" (NFS 23.5" x 29.5")
+                            </option>
+
+                            <option value="2030">
+                              2'0" x 3'0" (NFS 23.5" x 35.5")
+                            </option>
+
+                            <option value="2616">
+                              2'6" x 1'6" (NFS 29.5" x 17.5")
+                            </option>
+
+                            <option value="2620">
+                              2'6" x 2'0" (NFS 29.5" x 23.5")
+                            </option>
+
+                            <option value="2626">
+                              2'6" x 2'6" (NFS 29.5" x 29.5")
+                            </option>
+
+                            <option value="2630">
+                              2'6" x 3'0" (NFS 29.5" x 35.5")
+                            </option>
+
+                            <option value="3016">
+                              3'0" x 1'6" (NFS 35.5" x 17.5")
+                            </option>
+
+                            <option value="3020">
+                              3'0" x 2'0" (NFS 35.5" x 23.5")
+                            </option>
+
+                            <option value="3020">
+                              3'0" x 2'0" (35.5" x 23.5")
+                            </option>
+
+                            <option value="3026">
+                              3'0" x 2'6" (NFS 35.5" x 29.5")
+                            </option>
+
+                            <option value="3030">
+                              3'0" x 3'0" (NFS 35.5" x 35.5")
+                            </option>
+
+                            <option value="3036">
+                              3'0" x 3'6" (NFS 35.5" x 41.5")
+                            </option>
+
+                            <option value="3040">
+                              3'0" x 4'0" (NFS 35.5" x 47.5")
+                            </option>
+
+                            <option value="3046">
+                              3'0" x 4'6" (NFS 35.5" x 53.5")
+                            </option>
+
+                            <option value="3050">
+                              3'0" x 5'0" (NFS 35.5" x 59.5")
+                            </option>
+
+                            <option value="4016">
+                              4'0" x 1'6" (NFS 47.5" x 17.5")
+                            </option>
+
+                            <option value="4020">
+                              4'0" x 2'0" (NFS 47.5" x 23.5")
+                            </option>
+
+                            <option value="4026">
+                              4'0" x 2'6" (NFS 47.5" x 29.5")
+                            </option>
+
+                            <option value="4030">
+                              4'0" x 3'0" (NFS 47.5" x 35.5")
+                            </option>
+
+                            <option value="4036">
+                              4'0" x 3'6" (NFS 47.5" x 41.5")
+                            </option>
+
+                            <option value="4040">
+                              4'0" x 4'0" (NFS 47.5" x 47.5")
+                            </option>
+
+                            <option value="4046">
+                              4'0" x 4'6" (NFS 47.5" x 53.5")
+                            </option>
+
+                            <option value="4050">
+                              4'0" x 5'0" (NFS 47.5" x 59.5")
+                            </option>
+
+                            <option value="5016">
+                              5'0" x 1'6" (NFS 59.5" x 17.5")
+                            </option>
+
+                            <option value="5020">
+                              5'0" x 2'0" (NFS 59.5" x 23.5")
+                            </option>
+
+                            <option value="5026">
+                              5'0" x 2'6" (NFS 59.5" x 29.5")
+                            </option>
+
+                            <option value="5030">
+                              5'0" x 3'0" (NFS 59.5" x 35.5")
+                            </option>
+
+                            <option value="5036">
+                              5'0" x 3'6" (NFS 59.5" x 41.5")
+                            </option>
+
+                            <option value="5040">
+                              5'0" x 4'0" (NFS 59.5" x 47.5")
+                            </option>
+
+                            <option value="5046">
+                              5'0" x 4'6" (NFS 59.5" x 53.5")
+                            </option>
+
+                            <option value="5050">
+                              5'0" x 5'0" (NFS 59.5" x 59.5")
+                            </option>
+
+                            <option value="5060">
+                              5'0" x 6'0" (NFS 59.5" x 71.5")
+                            </option>
+
+                            <option value="6016">
+                              6'0" x 1'6" (NFS 71.5" x 17.5")
+                            </option>
+
+                            <option value="6020">
+                              6'0" x 2'0" (NFS 71.5" x 23.5")
+                            </option>
+
+                            <option value="6026">
+                              6'0" x 2'6" (NFS 71.5" x 29.5")
+                            </option>
+
+                            <option value="6030">
+                              6'0" x 3'0" (NFS 71.5" x 35.5")
+                            </option>
+
+                            <option value="6036">
+                              6'0" x 3'6" (NFS 71.5" x 41.5")
+                            </option>
+
+                            <option value="6040">
+                              6'0" x 4'0" (NFS 71.5" x 47.5")
+                            </option>
+
+                            <option value="6046">
+                              6'0" x 4'6" (NFS 71.5" x 53.5")
+                            </option>
+
+                            <option value="6050">
+                              6'0" x 5'0" (NFS 71.5" x 59.5")
+                            </option>
+
+                            <option value="6060">
+                              6'0" x 6'0" (NFS 71.5" x 71.5")
+                            </option>
+                          </select>
+                        </div>
+                        <div class="selectric">
+                          <span class="label"
+                            >2'0" x 1'6" (NFS 23.5" x 17.5")</span
+                          ><b class="button">▾</b>
+                        </div>
+                        <div class="selectric-items" tabindex="-1">
+                          <div class="selectric-scroll">
+                            <ul>
+                              <li data-index="0" class="">Select Size</li>
+                              <li data-index="1" class="selected">
+                                2'0" x 1'6" (NFS 23.5" x 17.5")
+                              </li>
+                              <li data-index="2" class="">
+                                2'0" x 2'0" (NFS 23.5" x 23.5")
+                              </li>
+                              <li data-index="3" class="">
+                                2'0" x 2'6" (NFS 23.5" x 29.5")
+                              </li>
+                              <li data-index="4" class="">
+                                2'0" x 3'0" (NFS 23.5" x 35.5")
+                              </li>
+                              <li data-index="5" class="">
+                                2'6" x 1'6" (NFS 29.5" x 17.5")
+                              </li>
+                              <li data-index="6" class="">
+                                2'6" x 2'0" (NFS 29.5" x 23.5")
+                              </li>
+                              <li data-index="7" class="">
+                                2'6" x 2'6" (NFS 29.5" x 29.5")
+                              </li>
+                              <li data-index="8" class="">
+                                2'6" x 3'0" (NFS 29.5" x 35.5")
+                              </li>
+                              <li data-index="9" class="">
+                                3'0" x 1'6" (NFS 35.5" x 17.5")
+                              </li>
+                              <li data-index="10" class="">
+                                3'0" x 2'0" (NFS 35.5" x 23.5")
+                              </li>
+                              <li data-index="11" class="">
+                                3'0" x 2'0" (35.5" x 23.5")
+                              </li>
+                              <li data-index="12" class="">
+                                3'0" x 2'6" (NFS 35.5" x 29.5")
+                              </li>
+                              <li data-index="13" class="">
+                                3'0" x 3'0" (NFS 35.5" x 35.5")
+                              </li>
+                              <li data-index="14" class="">
+                                3'0" x 3'6" (NFS 35.5" x 41.5")
+                              </li>
+                              <li data-index="15" class="">
+                                3'0" x 4'0" (NFS 35.5" x 47.5")
+                              </li>
+                              <li data-index="16" class="">
+                                3'0" x 4'6" (NFS 35.5" x 53.5")
+                              </li>
+                              <li data-index="17" class="">
+                                3'0" x 5'0" (NFS 35.5" x 59.5")
+                              </li>
+                              <li data-index="18" class="">
+                                4'0" x 1'6" (NFS 47.5" x 17.5")
+                              </li>
+                              <li data-index="19" class="">
+                                4'0" x 2'0" (NFS 47.5" x 23.5")
+                              </li>
+                              <li data-index="20" class="">
+                                4'0" x 2'6" (NFS 47.5" x 29.5")
+                              </li>
+                              <li data-index="21" class="">
+                                4'0" x 3'0" (NFS 47.5" x 35.5")
+                              </li>
+                              <li data-index="22" class="">
+                                4'0" x 3'6" (NFS 47.5" x 41.5")
+                              </li>
+                              <li data-index="23" class="">
+                                4'0" x 4'0" (NFS 47.5" x 47.5")
+                              </li>
+                              <li data-index="24" class="">
+                                4'0" x 4'6" (NFS 47.5" x 53.5")
+                              </li>
+                              <li data-index="25" class="">
+                                4'0" x 5'0" (NFS 47.5" x 59.5")
+                              </li>
+                              <li data-index="26" class="">
+                                5'0" x 1'6" (NFS 59.5" x 17.5")
+                              </li>
+                              <li data-index="27" class="">
+                                5'0" x 2'0" (NFS 59.5" x 23.5")
+                              </li>
+                              <li data-index="28" class="">
+                                5'0" x 2'6" (NFS 59.5" x 29.5")
+                              </li>
+                              <li data-index="29" class="">
+                                5'0" x 3'0" (NFS 59.5" x 35.5")
+                              </li>
+                              <li data-index="30" class="">
+                                5'0" x 3'6" (NFS 59.5" x 41.5")
+                              </li>
+                              <li data-index="31" class="">
+                                5'0" x 4'0" (NFS 59.5" x 47.5")
+                              </li>
+                              <li data-index="32" class="">
+                                5'0" x 4'6" (NFS 59.5" x 53.5")
+                              </li>
+                              <li data-index="33" class="">
+                                5'0" x 5'0" (NFS 59.5" x 59.5")
+                              </li>
+                              <li data-index="34" class="">
+                                5'0" x 6'0" (NFS 59.5" x 71.5")
+                              </li>
+                              <li data-index="35" class="">
+                                6'0" x 1'6" (NFS 71.5" x 17.5")
+                              </li>
+                              <li data-index="36" class="">
+                                6'0" x 2'0" (NFS 71.5" x 23.5")
+                              </li>
+                              <li data-index="37" class="">
+                                6'0" x 2'6" (NFS 71.5" x 29.5")
+                              </li>
+                              <li data-index="38" class="">
+                                6'0" x 3'0" (NFS 71.5" x 35.5")
+                              </li>
+                              <li data-index="39" class="">
+                                6'0" x 3'6" (NFS 71.5" x 41.5")
+                              </li>
+                              <li data-index="40" class="">
+                                6'0" x 4'0" (NFS 71.5" x 47.5")
+                              </li>
+                              <li data-index="41" class="">
+                                6'0" x 4'6" (NFS 71.5" x 53.5")
+                              </li>
+                              <li data-index="42" class="">
+                                6'0" x 5'0" (NFS 71.5" x 59.5")
+                              </li>
+                              <li data-index="43" class="last">
+                                6'0" x 6'0" (NFS 71.5" x 71.5")
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <input class="selectric-input" tabindex="0" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="common-divider mt40 mb40"></div>
+        <div>
+          <div class="common-title">
+            <h6><span id="lblFrameColors">Frame Colors</span></h6>
+          </div>
+          <div>
+            <div class="row">
+              <div class="col-md-3 pt20">
+                <div class="radio-grid">
+                  <div class="radio-field">
+                    <div class="radio-holder">
+                      <input
+                        type="radio"
+                        name="finish"
+                        value="WHT"
+                        checked=""
+                        onclick="RefreshForm('finish');"
+                      />
+                      <div class="radio-icon"></div>
+                    </div>
+                  </div>
+                  <div class="radio-label form-holder">
+                    <div class="">
+                      <img
+                        src="Images/Colors/WHT.gif"
+                        alt="White"
+                        width="23"
+                        height="23"
+                        class="border"
+                      />
+                    </div>
+                    <label for="">White</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 pt20">
+                <div class="radio-grid">
+                  <div class="radio-field">
+                    <div class="radio-holder">
+                      <input
+                        type="radio"
+                        name="finish"
+                        value="TAN"
+                        onclick="RefreshForm('finish');"
+                      />
+                      <div class="radio-icon"></div>
+                    </div>
+                  </div>
+                  <div class="radio-label form-holder">
+                    <div class="">
+                      <img
+                        src="Images/Colors/TAN.gif"
+                        alt="Desert Tan"
+                        width="23"
+                        height="23"
+                        class="border"
+                      />
+                    </div>
+                    <label for="">Desert Tan</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="common-divider mt40 mb40"></div>
+        <div>
+          <div class="common-title">
+            <h6>Frame Options</h6>
+          </div>
+          <div>
+            <div class="row">
+              <div class="col-md-3 pt20">
+                <div class="radio-grid">
+                  <div class="radio-field">
+                    <div class="radio-holder">
+                      <input
+                        type="radio"
+                        name="FrameOption"
+                        value="138FIN2"
+                        onclick="RefreshForm('FrameOption');"
+                        checked=""
+                      />
+                      <div class="radio-icon"></div>
+                    </div>
+                  </div>
+                  <div class="radio-label form-holder">
+                    <!-- <div style="display:none">edf40wrjww2WINDOW_ATTRIBUTES:Description</div>1 3/8&quot Fin Setback -->
+                    <label for="">1 3/8" Fin Setback</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 pt20">
+                <div class="radio-grid">
+                  <div class="radio-field">
+                    <div class="radio-holder">
+                      <input
+                        type="radio"
+                        name="FrameOption"
+                        value="1JCHAN"
+                        onclick="RefreshForm('FrameOption');"
+                      />
+                      <div class="radio-icon"></div>
+                    </div>
+                  </div>
+                  <div class="radio-label form-holder">
+                    <!-- <div style="display:none">edf40wrjww2WINDOW_ATTRIBUTES:Description</div>1&quot Contour J-Channel -->
+                    <label for="">1" Contour J-Channel</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 pt20">
+                <div class="radio-grid">
+                  <div class="radio-field">
+                    <div class="radio-holder">
+                      <input
+                        type="radio"
+                        name="FrameOption"
+                        value="1FINSTUC"
+                        onclick="RefreshForm('FrameOption');"
+                      />
+                      <div class="radio-icon"></div>
+                    </div>
+                  </div>
+                  <div class="radio-label form-holder">
+                    <!-- <div style="display:none">edf40wrjww2WINDOW_ATTRIBUTES:Description</div>Designed with a small protrusion at the edge of the  frame called a stucco key or stucco lip. This lip will help cover the small gap between the stucco  finish and the perimeter of the window frame. -->
+                    <label for="">1" Fin Setback</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 pt20">
+                <div class="radio-grid">
+                  <div class="radio-field">
+                    <div class="radio-holder">
+                      <input
+                        type="radio"
+                        name="FrameOption"
+                        value="2JCHAN"
+                        onclick="RefreshForm('FrameOption');"
+                      />
+                      <div class="radio-icon"></div>
+                    </div>
+                  </div>
+                  <div class="radio-label form-holder">
+                    <!-- <div style="display:none">edf40wrjww2WINDOW_ATTRIBUTES:Description</div>2&quot Brickmold-style J-Channel -->
+                    <label for="">2" Brickmold-style J-Channel</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 pt20">
+                <div class="radio-grid">
+                  <div class="radio-field">
+                    <div class="radio-holder">
+                      <input
+                        type="radio"
+                        name="FrameOption"
+                        value="BLOCK"
+                        onclick="RefreshForm('FrameOption');"
+                      />
+                      <div class="radio-icon"></div>
+                    </div>
+                  </div>
+                  <div class="radio-label form-holder">
+                    <!-- <div style="display:none">edf40wrjww2WINDOW_ATTRIBUTES:Description</div>Block Frame -->
+                    <label for="">Block Frame</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 pt20">
+                <div class="radio-grid">
+                  <div class="radio-field">
+                    <div class="radio-holder">
+                      <input
+                        type="radio"
+                        name="FrameOption"
+                        value="ZBAR1M"
+                        onclick="RefreshForm('FrameOption');"
+                      />
+                      <div class="radio-icon"></div>
+                    </div>
+                  </div>
+                  <div class="radio-label form-holder">
+                    <!-- <div style="display:none">edf40wrjww2WINDOW_ATTRIBUTES:Description</div>Flush fin - (also called Z-bar) replacement windows are typically used in California and other markets with aluminum windows in stucco home exteriors. -->
+                    <label for="">Z-Bar Standard</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 pt20">
+                <div class="radio-grid">
+                  <div class="radio-field">
+                    <div class="radio-holder">
+                      <input
+                        type="radio"
+                        name="FrameOption"
+                        value="ZBAR28"
+                        onclick="RefreshForm('FrameOption');"
+                      />
+                      <div class="radio-icon"></div>
+                    </div>
+                  </div>
+                  <div class="radio-label form-holder">
+                    <!-- <div style="display:none">edf40wrjww2WINDOW_ATTRIBUTES:Description</div>Wide Z-Bar width is 2-1/8&quot -->
+                    <label for="">Z-Bar Wide</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GRID OPTIONS -->
+
+        <div class="common-divider mt40 mb40"></div>
+        <div>
+          <div class="common-title">
+            <h6>Grid Options (as viewed from the interior)</h6>
+          </div>
+          <div>
+            <div class="row">
+              <div class="col-md-4 pt20">
+                <div class="radio-grid">
+                  <div class="radio-field">
+                    <div class="radio-holder">
+                      <input
+                        type="radio"
+                        name="grid"
+                        value="NONE"
+                        checked=""
+                        onclick="RefreshForm('Grid');"
+                      />
+                      <div class="radio-icon"></div>
+                    </div>
+                  </div>
+                  <div class="radio-label form-holder">
+                    <div class="">
+                      <img
+                        src="Images/Grids/NONE.gif"
+                        alt="None"
+                        class="img-fluid"
+                        width="75"
+                        height="102"
+                      />
+                    </div>
+                    <div class="pt6">
+                      <label for="">None</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 pt20">
+                <div class="radio-grid">
+                  <div class="radio-field">
+                    <div class="radio-holder">
+                      <input
+                        type="radio"
+                        name="grid"
+                        value="FLAT"
+                        onclick="RefreshForm('Grid');"
+                      />
+                      <div class="radio-icon"></div>
+                    </div>
+                  </div>
+                  <div class="radio-label form-holder">
+                    <div class="">
+                      <img src="Images/Grids/FLAT.gif" alt="5/8" flat=""
+                      grid"="" class="img-fluid" width="75" height="102">
+                    </div>
+                    <div class="pt6">
+                      <label for="">5/8" Flat Grid</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 pt20">
+                <div class="radio-grid">
+                  <div class="radio-field">
+                    <div class="radio-holder">
+                      <input
+                        type="radio"
+                        name="grid"
+                        value="SCUL"
+                        onclick="RefreshForm('Grid');"
+                      />
+                      <div class="radio-icon"></div>
+                    </div>
+                  </div>
+                  <div class="radio-label form-holder">
+                    <div class="">
+                      <img src="Images/Grids/SCUL.gif" alt="1-1/16"
+                      sculptured="" grid"="" class="img-fluid" width="75"
+                      height="102">
+                    </div>
+                    <div class="pt6">
+                      <label for="">1-1/16" Sculptured Grid</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 pt20">
+                <div class="radio-grid">
+                  <div class="radio-field">
+                    <div class="radio-holder">
+                      <input
+                        type="radio"
+                        name="grid"
+                        value="SDL"
+                        onclick="RefreshForm('Grid');"
+                      />
+                      <div class="radio-icon"></div>
+                    </div>
+                  </div>
+                  <div class="radio-label form-holder">
+                    <div class="">
+                      <img
+                        src="Images/Grids/SDL.gif"
+                        alt="External (SDL)"
+                        class="img-fluid"
+                        width="75"
+                        height="102"
+                      />
+                    </div>
+                    <div class="pt6">
+                      <label for="">External (SDL)</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- /GRID OPTIONS -->
+
+        <!-- GRID CONFIG -->
+
+        <!-- /GRID CONFIG -->
+
+        <!-- GLASS -->
+
+        <div class="common-divider mt40 mb40"></div>
+        <div>
+          <div class="common-title">
+            <h6>Glass</h6>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 pt20">
+              <div>
+                <select
+                  name="Glass"
+                  class="default-select"
+                  onchange="UpdateGlassImage(); RefreshForm('Glass');"
+                >
+                  <option value="# 42 OBS"># 42 Obscure 5/32</option>
+                  <script language="javascript">
+                    GlassImages["# 42 OBS"] = "42_clear.jpg";
+                  </script>
+
+                  <option value="CLR" selected="">Clear</option>
+                  <script language="javascript">
+                    GlassImages["CLR"] = "suncoat_lowe.jpg";
+                  </script>
+
+                  <option value="CLR 3/16">Clear 3/16</option>
+                  <script language="javascript">
+                    GlassImages["CLR 3/16"] = "suncoat_lowe.jpg";
+                  </script>
+
+                  <option value="CLR 1/4">Clear 1/4</option>
+                  <script language="javascript">
+                    GlassImages["CLR 1/4"] = "suncoat_lowe.jpg";
+                  </script>
+
+                  <option value="GC">Glue Chip 5/32</option>
+                  <script language="javascript">
+                    GlassImages["GC"] = "glue_chip.jpg";
+                  </script>
+
+                  <option value="LAM">Laminated</option>
+                  <script language="javascript">
+                    GlassImages["LAM"] = "suncoat_lowe.jpg";
+                  </script>
+
+                  <option value="Mattelux">Mattelux</option>
+                  <script language="javascript">
+                    GlassImages["Mattelux"] = "mattelux.jpg";
+                  </script>
+
+                  <option value="OBS">Obscure</option>
+                  <script language="javascript">
+                    GlassImages["OBS"] = "P516.jpg";
+                  </script>
+
+                  <option value="RAIN">Rain</option>
+                  <script language="javascript">
+                    GlassImages["RAIN"] = "rain.jpg";
+                  </script>
+
+                  <option value="REED">Reed 5/32</option>
+                  <script language="javascript">
+                    GlassImages["REED"] = "narrow_reed_one8th.jpg";
+                  </script>
+
+                  <option value="SB">Solar Bronze</option>
+                  <script language="javascript">
+                    GlassImages["SB"] = "solar_bronze.jpg";
+                  </script>
+                </select>
+              </div>
+              <div class="pt20">
+                <img
+                  name="GlassImage"
+                  src="Images/Glass/suncoat_lowe.jpg"
+                  alt="Glass Image"
+                  width="118"
+                  height="118"
+                  class="img-fluid border"
+                />
+              </div>
+            </div>
+            <div class="col-lg-8 offset-lg-1">
+              <div class="row">
+                <div class="col-lg-6 pt20">
+                  <input
+                    type="hidden"
+                    name="GlassOptionsARG_last"
+                    value="False"
+                  />
+                  <div class="radio-grid">
+                    <div class="radio-field">
+                      <div class="checkbox-holder">
+                        <input
+                          type="checkbox"
+                          name="GlassOptionsARG"
+                          onclick="RefreshForm('Glass');"
+                        />
+                        <div class="checkbox-icon"></div>
+                      </div>
+                    </div>
+                    <div class="radio-label form-holder">
+                      <!-- <div style="display:none">edf40wrjww2WINDOW_ATTRIBUTES:Description</div>Argon gas, used between panes enhances thermal performance without getting in the way of the view. -->
+                      <label for="">Argon</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 pt20">
+                  <input
+                    type="hidden"
+                    name="GlassOptionsTEMP_last"
+                    value="False"
+                  />
+                  <div class="radio-grid">
+                    <div class="radio-field">
+                      <div class="checkbox-holder">
+                        <input
+                          type="checkbox"
+                          name="GlassOptionsTEMP"
+                          onclick="RefreshForm('Glass');"
+                        />
+                        <div class="checkbox-icon"></div>
+                      </div>
+                    </div>
+                    <div class="radio-label form-holder">
+                      <!--  -->
+                      <label for="">Tempered</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 pt20">
+                  <input
+                    type="hidden"
+                    name="GlassOptionsSCMAX_last"
+                    value="False"
+                  />
+                  <div class="radio-grid">
+                    <div class="radio-field">
+                      <div class="checkbox-holder">
+                        <input
+                          type="checkbox"
+                          name="GlassOptionsSCMAX"
+                          onclick="RefreshForm('Glass');"
+                        />
+                        <div class="checkbox-icon"></div>
+                      </div>
+                    </div>
+                    <div class="radio-label form-holder">
+                      <!-- <div style="display:none">edf40wrjww2WINDOW_ATTRIBUTES:Description</div>Increases center glass surface temperature in winter = Comfortable, consistently cozy rooms. Reduces solar heat gain more than two-coat, Low-E glass = Keeps your house cooler in the summer. Provides ultraviolet light blockage = Additional protection from UV-A and UV-B rays for your fabrics and other furnishings. -->
+                      <label for="">SunCoatMAX</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 pt20">
+                  <input
+                    type="hidden"
+                    name="GlassOptionsT24_last"
+                    value="False"
+                  />
+                  <div class="radio-grid">
+                    <div class="radio-field">
+                      <div class="checkbox-holder">
+                        <input
+                          type="checkbox"
+                          name="GlassOptionsT24"
+                          onclick="RefreshForm('Glass');"
+                        />
+                        <div class="checkbox-icon"></div>
+                      </div>
+                    </div>
+                    <div class="radio-label form-holder">
+                      <!-- SunCoat Max with Argon & EdgeGardMAX Spacer - (California Only) -->
+                      <label for="">Title 24 (California Only)</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pt30">
+                <div class="common-content">
+                  <p>
+                    All of our windows and doors come standard with
+                    <strong>Low-E</strong> glass. All of our doors come standard
+                    with tempered glass.
+                  </p>
+                  <p>
+                    Unsure whether or not you need tempered glass? Refer to our
+                    <a href="https://thewindowstore.com/building-codes"
+                      >Building Codes</a
+                    >
+                    section for more info.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- /GLASS -->
+
+        <!-- OTHER OPTIONS -->
+        <div class="common-divider mt40 mb40"></div>
+        <div>
+          <div class="common-title">
+            <h6>Other</h6>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 pt20">
+              <input type="hidden" name="OtherBRTU_last" value="False" />
+              <div class="radio-grid">
+                <div class="radio-field">
+                  <div class="checkbox-holder">
+                    <input
+                      type="checkbox"
+                      name="OtherBRTU"
+                      onclick="RefreshForm('');"
+                    />
+                    <div class="checkbox-icon"></div>
+                  </div>
+                </div>
+                <div class="radio-label form-holder">
+                  <!-- <div style="display:none">edf40wrjww2WINDOW_ATTRIBUTES:Description</div>Breather tubes allow the air space between the 2 panes of glass to equalize to the ambient air pressure. To be used in applications over 2500 ft. Cannot be used in conjunction with argon gas filled windows. -->
+                  <label for="">Breather tubes</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 pt20">
+              <input type="hidden" name="OtherSSA_last" value="False" />
+              <div class="radio-grid">
+                <div class="radio-field">
+                  <div class="checkbox-holder">
+                    <input
+                      type="checkbox"
+                      name="OtherSSA"
+                      onclick="RefreshForm('');"
+                    />
+                    <div class="checkbox-icon"></div>
+                  </div>
+                </div>
+                <div class="radio-label form-holder">
+                  <!-- <div style="display:none">edf40wrjww2WINDOW_ATTRIBUTES:Description</div>Sloped sill adaptor is for use with an existing window that has a sloped sill. The adaptor extends down from the bottom of the window so that it covers the gap that would be created by the window sill sloping away from the new window. -->
+                  <label for="">Sloped Sill Adapter</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 pt20">
+              <input type="hidden" name="OtherTRIM_last" value="False" />
+              <div class="radio-grid">
+                <div class="radio-field">
+                  <div class="checkbox-holder">
+                    <input
+                      type="checkbox"
+                      name="OtherTRIM"
+                      onclick="RefreshForm('');"
+                    />
+                    <div class="checkbox-icon"></div>
+                  </div>
+                </div>
+                <div class="radio-label form-holder">
+                  <!-- <div style="display:none">edf40wrjww2WINDOW_ATTRIBUTES:Description</div>Trim strip is for finishing the interior of the window. This covers the gap between the new window and the drywall around the window. For replacement windows only. -->
+                  <label for="">1-5/8" Interior Vinyl Trim</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 pt20">
+              <input type="hidden" name="OtherPTS_last" value="False" />
+              <div class="radio-grid">
+                <div class="radio-field">
+                  <div class="checkbox-holder">
+                    <input
+                      type="checkbox"
+                      name="OtherPTS"
+                      onclick="RefreshForm('');"
+                    />
+                    <div class="checkbox-icon"></div>
+                  </div>
+                </div>
+                <div class="radio-label form-holder">
+                  <!-- <div style="display:none">edf40wrjww2WINDOW_ATTRIBUTES:Description</div>Featuring smaller yarns, the innovative PureView® window screen from Milgard blocks less of your vision and increases light transmittal, allowing more natural light to fill your room. The finer mesh also reduces the appearance of the screen, which makes your home more beautiful, inside and out. -->
+                  <label for="">Pure View Screen</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /OTHER OPTIONS -->
+
+        <div class="common-divider mt40 mb40"></div>
+        <div>
+          <div class="form-holder">
+            <!-- location -->
+            <div>
+              <label for=""
+                >Window Location (e.g. kitchen, living room...)</label
+              >
+              <input type="text" value="" name="location" />
+              <div class="common-content">
+                <p>
+                  If this window is for a bedroom or basement, be sure it meets
+                  <a href="https://thewindowstore.com/building-codes"
+                    >Egress Requirements.</a
+                  >
+                </p>
+              </div>
+            </div>
+            <!-- /location -->
+            <!-- NOTES -->
+            <div class="pt30">
+              <label for="">Notes</label>
+              <textarea name="notes"></textarea>
+            </div>
+            <!-- /NOTES -->
+          </div>
+        </div>
+
+        <div class="pt40">
+          <div class="calculate-form-grid">
+            <div class="grid-label">Price Each:</div>
+            <div class="grid-value">
+              <span class="orange"
+                ><span id="DisplayPrice2"
+                  >press <i>calculate total</i></span
+                ></span
+              >
+            </div>
+          </div>
+
+          <div class="calculate-form-grid">
+            <div class="grid-label pt20">Qty:</div>
+            <div class="grid-value pt20">1</div>
+          </div>
+          <div class="calculate-form-grid">
+            <div class="grid-label pt20">Total:</div>
+            <div class="grid-value pt20">
+              <div class="total-grid">
+                <div class="total-value">
+                  <span class="orange"
+                    ><span id="DisplayPriceTotal2"></span
+                  ></span>
+                </div>
+                <div class="total-button">
+                  <button
+                    class="default-btn blue small"
+                    type="submit"
+                    name="Calculate"
+                  >
+                    Calculate Total
+                  </button>
+                  <button class="default-btn small" type="submit" name="cancel">
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="calculate-form-buttons pt20" id="save2"></div>
+        </div>
+        <div class="common-divider mt40 mb40"></div>
+      </div>
+    </div>
+  </div>
+</form>
