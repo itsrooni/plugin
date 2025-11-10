@@ -194,3 +194,143 @@ function SetVisibility( theObjectID, showit ) {
 		}
 	}
 }
+
+//
+// Reset sizes when Manufacturer, Frame, Type, or SubType changes
+//
+function ResetSizesRefresh( fieldName ) {
+	try {
+		// Set the ResetSizes hidden field to indicate sizes should be reset
+		var resetSizesField = document.forms['windowbuilder'].elements['ResetSizes'];
+		if (resetSizesField) {
+			resetSizesField.value = '1';
+		}
+		
+		// Reset the ROSize dropdown to default "Select Size" option
+		var roSizeField = document.forms['windowbuilder'].elements['ROSize'];
+		if (roSizeField) {
+			roSizeField.value = '';
+			// Update Selectric if it's being used
+			var $ = (typeof jQuery !== 'undefined') ? jQuery : null;
+			if ($ && $.fn.selectric) {
+				$(roSizeField).selectric('refresh');
+			}
+		}
+		
+		// Call RefreshForm to handle any additional refresh logic
+		RefreshForm(fieldName);
+	} catch (e) {
+		console.error('Error in ResetSizesRefresh:', e);
+	}
+}
+
+//
+// General form refresh function
+//
+function RefreshForm( fieldName ) {
+	try {
+		// This function can be extended to handle specific refresh logic per field
+		// For now, it's a placeholder that prevents errors
+		// You can add auto-calculation or other logic here if needed
+		
+		// If jQuery and Selectric are available, refresh the select if needed
+		if (fieldName) {
+			var $ = (typeof jQuery !== 'undefined') ? jQuery : null;
+			if ($ && $.fn.selectric) {
+				var field = document.forms['windowbuilder'].elements[fieldName];
+				if (field && field.tagName === 'SELECT') {
+					$(field).selectric('refresh');
+				}
+			}
+		}
+	} catch (e) {
+		console.error('Error in RefreshForm:', e);
+	}
+}
+
+//
+// Update size input fields based on NFS or RO selection
+//
+function UpdateSizeInput( type ) {
+	try {
+		var form = document.forms['windowbuilder'];
+		if (!form) return;
+		
+		// Get the size input fields
+		var widthField = form.elements['Width'];
+		var widthSixteenthField = form.elements['WidthSixteenth'];
+		var heightField = form.elements['Height'];
+		var heightSixteenthField = form.elements['HeightSixteenth'];
+		var roSizeField = form.elements['ROSize'];
+		
+		// Check if jQuery is available
+		var $ = (typeof jQuery !== 'undefined') ? jQuery : null;
+		
+		if (type === 'NFS') {
+			// Enable NFS (custom size) fields
+			if (widthField) {
+				widthField.disabled = false;
+				widthField.removeAttribute('disabled');
+			}
+			if (widthSixteenthField) {
+				widthSixteenthField.disabled = false;
+				if ($ && $.fn.selectric) {
+					$(widthSixteenthField).closest('.selectric-wrapper').removeClass('selectric-disabled');
+					$(widthSixteenthField).selectric('refresh');
+				}
+			}
+			if (heightField) {
+				heightField.disabled = false;
+				heightField.removeAttribute('disabled');
+			}
+			if (heightSixteenthField) {
+				heightSixteenthField.disabled = false;
+				if ($ && $.fn.selectric) {
+					$(heightSixteenthField).closest('.selectric-wrapper').removeClass('selectric-disabled');
+					$(heightSixteenthField).selectric('refresh');
+				}
+			}
+			// Disable RO size dropdown
+			if (roSizeField) {
+				roSizeField.disabled = true;
+				if ($ && $.fn.selectric) {
+					$(roSizeField).selectric('refresh');
+				}
+			}
+		} else if (type === 'RO') {
+			// Disable NFS (custom size) fields
+			if (widthField) {
+				widthField.disabled = true;
+				widthField.setAttribute('disabled', 'disabled');
+			}
+			if (widthSixteenthField) {
+				widthSixteenthField.disabled = true;
+				if ($ && $.fn.selectric) {
+					$(widthSixteenthField).closest('.selectric-wrapper').addClass('selectric-disabled');
+					$(widthSixteenthField).selectric('refresh');
+				}
+			}
+			if (heightField) {
+				heightField.disabled = true;
+				heightField.setAttribute('disabled', 'disabled');
+			}
+			if (heightSixteenthField) {
+				heightSixteenthField.disabled = true;
+				if ($ && $.fn.selectric) {
+					$(heightSixteenthField).closest('.selectric-wrapper').addClass('selectric-disabled');
+					$(heightSixteenthField).selectric('refresh');
+				}
+			}
+			// Enable RO size dropdown
+			if (roSizeField) {
+				roSizeField.disabled = false;
+				roSizeField.removeAttribute('disabled');
+				if ($ && $.fn.selectric) {
+					$(roSizeField).selectric('refresh');
+				}
+			}
+		}
+	} catch (e) {
+		console.error('Error in UpdateSizeInput:', e);
+	}
+}
